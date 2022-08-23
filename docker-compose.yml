@@ -1,5 +1,5 @@
 #~/laravel-app/docker-compose.yml
-version: '3.1'
+version: '3.2'
 services:
   
   #PHP Service
@@ -17,6 +17,8 @@ services:
     volumes:
       - ./html/:/var/www/html
       # - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+     ports:
+      - "9000:9000"
     networks:
       - app-network
 
