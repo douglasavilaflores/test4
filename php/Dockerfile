@@ -1,4 +1,3 @@
-#~/laravel-app/php/Dockerfile
 FROM php:7.4-fpm-alpine
 
 # Set working directory

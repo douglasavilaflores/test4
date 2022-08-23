@@ -1,4 +1,3 @@
-#~/laravel-app/docker-compose.yml
 version: '3.2'
 services:
   
@@ -15,7 +14,7 @@ services:
       SERVICE_TAGS: dev
     # working_dir: /var/www/html
     volumes:
-      - ./html/:/var/www/html
+      - html:/var/www/html
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
@@ -30,7 +29,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./html/:/var/www/html
+      - html:/var/www/html
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
@@ -59,5 +58,16 @@ networks:
     driver: bridge
 #Volumes
 volumes:
-  dbdata:
-    driver: local
+    dbdata:
+        driver: local
+        driver_opts:
+          type: 'none'
+          o: 'bind'
+          device: './mysql/bd'
+    
+    html:
+        driver: local
+        driver_opts:
+          type: 'none'
+          o: 'bind'
+          device: './html'
