@@ -63,11 +63,11 @@ volumes:
         driver_opts:
           type: 'none'
           o: 'bind'
-          device: '/var/www/mysql/db'
+          device: '/var/www/test4/mysql/db'
     #
     html:
         driver: local
         driver_opts:
           type: 'none'
           o: 'bind'
-          device: '/var/www/html'
+          device: '/var/www/test4/html'
