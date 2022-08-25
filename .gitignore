@@ -3,4 +3,4 @@
 
 #
 mysql/db/
-!
+!mysql/db/*.pem
