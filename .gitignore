@@ -4,3 +4,5 @@
 # ignore db files
 mysql/db/*
 !mysql/db/.daf
+
+# https://www.pluralsight.com/guides/how-to-use-gitignore-file
